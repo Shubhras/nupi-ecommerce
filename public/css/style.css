@@ -292,6 +292,28 @@ body {
   font-weight: bold;
   border-radius: 40px;
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  animation: pulse-animation 2s infinite;
+}
+
+.order-btn:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(236, 128, 45, 0.4);
+  background-color: #ec802d;
+  color: #0c2e81;
+  animation-play-state: paused;
+}
+
+@keyframes pulse-animation {
+  0% {
+    box-shadow: 0 0 0 0 rgba(12, 46, 129, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(12, 46, 129, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(12, 46, 129, 0);
+  }
 }
 
 /* Carousel Customization */
@@ -475,13 +497,39 @@ body {
   background-color: #e8b84a;
   border-radius: 25px;
   text-align: center;
-  padding: 10px;
+  transition: all 0.3s ease-in-out;
+  animation: pulse-animation-gold 2s infinite;
+}
+
+.card-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 15px rgba(12, 46, 129, 0.4);
+  background-color: #0c2e81;
+  animation-play-state: paused;
+}
+
+.card-btn:hover a {
+  color: #e8b84a;
 }
 
 .card-btn a {
+  display: block;
+  padding: 10px;
   font-weight: bold;
   color: #0c2e81;
   text-decoration: none;
+}
+
+@keyframes pulse-animation-gold {
+  0% {
+    box-shadow: 0 0 0 0 rgba(232, 184, 74, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(232, 184, 74, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(232, 184, 74, 0);
+  }
 }
 
 /* ===============================
@@ -717,4 +765,29 @@ body {
   .card-text p {
     font-size: 14px;
   }
+}
+
+/* ================= FOOTER ================= */
+.footer-logo:hover {
+  transform: scale(1.05);
+}
+
+.social-icon {
+  font-size: 22px;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.social-icon:hover {
+  transform: translateY(-5px);
+  color: #fff !important;
+}
+
+.footer-link {
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #fff !important;
+  text-decoration: underline !important;
 }
