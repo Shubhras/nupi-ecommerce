@@ -3,21 +3,78 @@
 @section('content')
     <!-- BANNER -->
     <section class="banner-section">
-        <div class="banner-wrapper">
-            <!-- Banner Image -->
-            <img src="{{ asset('images/banner.png') }}" class="banner-img" alt="banner" />
-            <!-- Text Overlay -->
-            <div class="banner-content custom-container">
-                <h1>
-                    Happiness is <br />
-                    one cup away
-                </h1>
-                <p>
-                    All your coffee and tea needs in <br />
-                    one place
-                </p>
-                <a href="{{ route('product.detail') }}" class="order-btn">Order Now</a>
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <!-- Slide 1 -->
+                <div class="carousel-item active">
+                    <div class="banner-wrapper">
+                        <!-- Banner Image -->
+                        <img src="{{ asset('images/banner.png') }}" class="banner-img" alt="banner" />
+                        <!-- Text Overlay -->
+                        <div class="banner-content custom-container">
+                            <h1>
+                                Happiness is <br />
+                                one cup away
+                            </h1>
+                            <p>
+                                All your coffee and tea needs in <br />
+                                one place
+                            </p>
+                            <a href="{{ route('product.detail') }}" class="order-btn">Order Now</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="banner-wrapper">
+                        <!-- Banner Image -->
+                        <img src="{{ asset('images/banner_1.png') }}" class="banner-img" alt="banner" />
+                        <!-- Text Overlay -->
+                        <div class="banner-content custom-container">
+                            <!-- <h1>
+                                        Freshly Roasted <br />
+                                        Delivered to you
+                                    </h1>
+                                    <p>
+                                        Experience the best quality <br />
+                                        every single morning
+                                    </p>
+                                    <a href="{{ route('product.detail') }}" class="order-btn">Shop Collection</a> -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="banner-wrapper">
+                        <!-- Banner Image -->
+                        <img src="{{ asset('images/banner_2.png') }}" class="banner-img" alt="banner" />
+                        <!-- Text Overlay -->
+                        <div class="banner-content custom-container">
+                            <!-- <h1>
+                                    Your Daily Fuel <br />
+                                    Starts Here
+                                </h1>
+                                <p>
+                                    Join our community and <br />
+                                    never run out of coffee
+                                </p>
+                                <a href="{{ route('partner') }}" class="order-btn">Become a Partner</a> -->
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
         </div>
     </section>
 

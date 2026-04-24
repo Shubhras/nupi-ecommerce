@@ -47,8 +47,9 @@ class OrderController extends Controller
             })
             ->addColumn('action', function ($row) {
                 $viewBtn = '<a href="' . route('admin.orders.show', $row->id) . '" class="btn btn-info btn-sm" title="View"><i class="fas fa-eye"></i></a>';
+                $updatePaymentBtn = '<a href="javascript:void(0)" data-id="' . $row->id . '" data-method="' . $row->payment_method . '" data-status="' . $row->payment_status . '" class="btn btn-warning btn-sm update-payment ml-1" title="Update Payment Status"><i class="fas fa-credit-card"></i></a>';
                 $deleteBtn = '<a href="javascript:void(0)" data-id="' . $row->id . '" class="btn btn-danger btn-sm delete-order ml-1" title="Delete"><i class="fas fa-trash"></i></a>';
-                return $viewBtn . ' ' . $deleteBtn;
+                return $viewBtn . $updatePaymentBtn . ' ' . $deleteBtn;
             })
             ->rawColumns(['status', 'action'])
             ->make(true);
@@ -74,6 +75,33 @@ class OrderController extends Controller
             return response()->json([
                 'success' => false,
                 'message' => 'Error deleting order.'
+            ], 500);
+        }
+    }
+
+    public function updatePaymentStatus(Request $request, $id)
+    {
+        $request->validate([
+            'payment_method' => 'required|in:card,cod',
+            'payment_status' => 'required|in:pending,paid,failed',
+            'admin_message' => 'nullable|string',
+        ]);
+
+        try {
+            $order = Order::findOrFail($id);
+            $order->payment_method = $request->payment_method;
+            $order->payment_status = $request->payment_status;
+            $order->admin_message = $request->admin_message;
+            $order->save();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Payment details updated successfully.'
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Error updating payment status.'
             ], 500);
         }
     }

@@ -294,6 +294,21 @@ body {
   text-decoration: none;
 }
 
+/* Carousel Customization */
+.banner-section .carousel-control-prev-icon,
+.banner-section .carousel-control-next-icon {
+  background-color: #0c2e81;
+  border-radius: 50%;
+  padding: 25px;
+  background-size: 50%;
+  opacity: 0.8;
+}
+
+.banner-section .carousel-control-prev,
+.banner-section .carousel-control-next {
+  width: 7%;
+}
+
 /* ================= COFFEE SECTION ================= */
 .coffee-section {
   width: 100%;

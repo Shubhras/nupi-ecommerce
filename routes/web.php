@@ -56,6 +56,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/orders/list', [App\Http\Controllers\Admin\OrderController::class, 'list'])->name('admin.orders.list')->middleware('auth');
     Route::get('/orders/{id}', [App\Http\Controllers\Admin\OrderController::class, 'show'])->name('admin.orders.show')->middleware('auth');
     Route::delete('/orders/{id}', [App\Http\Controllers\Admin\OrderController::class, 'destroy'])->name('admin.orders.destroy')->middleware('auth');
+    Route::post('/orders/{id}/update-payment', [App\Http\Controllers\Admin\OrderController::class, 'updatePaymentStatus'])->name('admin.orders.update_payment')->middleware('auth');
 });
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

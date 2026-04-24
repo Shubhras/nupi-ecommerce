@@ -12,7 +12,7 @@
   z-index: 2000;
   display: none;
   /* Hidden by default */
-  justify-content: flex-end;
+  justify-content: center;
   /* Align to right */
   align-items: flex-start;
   /* Start from top */

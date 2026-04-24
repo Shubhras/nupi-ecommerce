@@ -66,6 +66,49 @@
         <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
+
+    <!-- Update Payment Status Modal -->
+    <div class="modal fade" id="updatePaymentModal" tabindex="-1" aria-labelledby="updatePaymentModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="updatePaymentModalLabel">Update Payment Status</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="updatePaymentForm">
+                    @csrf
+                    <div class="modal-body">
+                        <input type="hidden" name="order_id" id="payment_order_id">
+                        <div class="form-group">
+                            <label for="payment_method">Payment Method</label>
+                            <select class="form-control" id="payment_method" name="payment_method" required>
+                                <option value="cod">COD</option>
+                                <option value="card">Card</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="payment_status">Payment Status</label>
+                            <select class="form-control" id="payment_status" name="payment_status" required>
+                                <option value="pending">Pending</option>
+                                <option value="paid">Paid</option>
+                                <option value="failed">Failed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="admin_message">Message / Note</label>
+                            <textarea class="form-control" id="admin_message" name="admin_message" rows="3" placeholder="Add some message..."></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary" id="savePaymentUpdateBtn">Update Status</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 @endsection
 
 @section('scripts')
@@ -120,6 +163,50 @@
                         }
                     });
                 }
+            });
+
+            // Open Update Payment Status Modal
+            $(document).on('click', '.update-payment', function() {
+                var orderId = $(this).data('id');
+                var currentMethod = $(this).data('method');
+                var currentStatus = $(this).data('status');
+                
+                $('#payment_order_id').val(orderId);
+                $('#payment_method').val(currentMethod);
+                $('#payment_status').val(currentStatus);
+                $('#admin_message').val('');
+                $('#updatePaymentModal').modal('show');
+            });
+
+            // Submit Update Payment Form
+            $('#updatePaymentForm').on('submit', function(e) {
+                e.preventDefault();
+                var orderId = $('#payment_order_id').val();
+                var formData = $(this).serialize();
+                var submitBtn = $('#savePaymentUpdateBtn');
+
+                submitBtn.prop('disabled', true).text('Updating...');
+
+                $.ajax({
+                    url: '/admin/orders/' + orderId + '/update-payment',
+                    type: 'POST',
+                    data: formData,
+                    success: function(response) {
+                        if(response.success) {
+                            alert(response.message);
+                            $('#updatePaymentModal').modal('hide');
+                            $('#orders-table').DataTable().ajax.reload(null, false);
+                        } else {
+                            alert('Error: ' + response.message);
+                        }
+                    },
+                    error: function(xhr) {
+                        alert('Error updating payment status.');
+                    },
+                    complete: function() {
+                        submitBtn.prop('disabled', false).text('Update Status');
+                    }
+                });
             });
         });
     </script>

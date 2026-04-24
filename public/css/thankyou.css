@@ -15,7 +15,7 @@
 
   /* Align to right side */
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: flex-start;
   padding: 0 0 20px 0;
   overflow-y: auto;

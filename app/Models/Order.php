@@ -22,7 +22,8 @@ class Order extends Model
         'total',
         'payment_method',
         'payment_status',
-        'card_last4'
+        'card_last4',
+        'admin_message'
     ];
 
     public function items()
