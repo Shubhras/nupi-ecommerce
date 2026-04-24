@@ -1,0 +1,74 @@
+/* ABOUT SECTION */
+.about-section {
+  background-color: #fcf3e9;
+}
+
+/* ABOUT BADGE */
+.about-badge {
+  background-color: #6cc0b8;
+  color: #f5c54c;
+  font-size: 100px;
+  font-weight: bold;
+  border-radius: 20px;
+}
+
+/* TITLES */
+.about-title {
+  color: #0c2e81;
+  font-weight: bolder;
+  font-size: 40px;
+  margin-bottom: 15px;
+}
+
+/* TEXT */
+.about-text {
+  color: #0c2e81;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+/* IMAGES */
+.about-img {
+  max-height: 400px;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .about-badge {
+    font-size: 45px;
+  }
+
+  .about-title {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .about-text {
+    font-size: 16px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .about-img {
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-badge {
+    font-size: 35px;
+  }
+
+  .about-title {
+    font-size: 28px;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .about-img {
+    max-height: 250px;
+  }
+}

@@ -1,0 +1,136 @@
+/* ===============================
+   PRODUCT DETAIL PAGE
+================================= */
+
+.product-detail-section {
+  background-color: #fcf3e9;
+}
+
+/* TITLE */
+.product-title {
+  font-size: 70px;
+  font-weight: 700;
+  color: #123971;
+  line-height: 1.1;
+}
+
+/* DESCRIPTION */
+.product-desc {
+  color: #0c2e81;
+  font-size: 18px;
+
+}
+
+/* PRICE */
+.product-price {
+  font-size: 35px;
+  font-weight: 700;
+  color: #0c2e81;
+  margin-top: 20px;
+}
+
+/* QUANTITY BUTTONS */
+.qty-btn {
+  border: none;
+  background: white;
+  width: 35px;
+  height: 28px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #0c2e81;
+}
+
+.qty-number {
+  font-weight: bold;
+  color: #0c2e81;
+}
+
+/* ADD TO CART BUTTON */
+.add-cart-btn {
+  background-color: #f5c54c;
+  color: #0c2e81;
+  font-weight: bold;
+  border-radius: 25px;
+  padding: 8px 25px;
+  font-size: 14px;
+}
+
+.add-cart-btn:hover {
+  background-color: #0c2e81;
+  color: #f5c54c;
+}
+
+/* REVIEWS */
+.review-title {
+  font-size: 35px;
+  font-weight: 700;
+  color: #0c2e81;
+}
+
+.stars {
+  font-size: 18px;
+  color: #0c2e81;
+  margin: 5px 0;
+}
+
+.review-score {
+  color: #0c2e81;
+}
+
+.review-text {
+  color: #0c2e81;
+  font-size: 18px;
+  max-width: 320px;
+}
+
+/* ===============================
+   RESPONSIVE FIXES
+================================= */
+
+@media (max-width: 768px) {
+  .product-title {
+    font-size: 45px;
+    text-align: center;
+  }
+
+  .product-desc {
+    max-width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+
+  .product-price {
+    text-align: center;
+  }
+
+  .quantity-box {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .add-cart-btn {
+    display: block;
+    margin: auto;
+  }
+
+  .review-text {
+    text-align: center;
+    margin: auto;
+  }
+
+  .review-title {
+    text-align: center;
+  }
+
+  .stars {
+    text-align: center;
+  }
+
+  .review-score {
+    text-align: center;
+    display: block;
+  }
+}

@@ -1,0 +1,705 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* NAVBAR FULL WIDTH */
+.custom-navbar {
+  background-color: #fcf3e9;
+  width: 100%;
+  padding: 25px 0;
+  border-bottom: 2px solid #6cc0b8;
+}
+
+.orange-text {
+  color: #FDB115;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.custom-container {
+  max-width: 1440px;
+  margin: auto;
+}
+
+/* NAVBAR CONTENT CENTER */
+.nav-container {
+  width: 100%;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  height: 40px;
+}
+
+/* LINKS */
+.custom-nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-nav-links .nav-link {
+  color: #0c2e81;
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.custom-nav-links .nav-link:hover,
+.custom-nav-links .nav-link.active {
+  color: #ec802d;
+}
+
+/* ICONS */
+.lang-pill {
+  background: white;
+  padding: 8px 14px;
+  border-radius: 25px;
+  font-weight: bold;
+  color: #0c2e81;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.icon-circle {
+  width: 42px;
+  height: 42px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-circle img {
+  width: 20px;
+}
+
+/* ================= MOBILE MENU ================= */
+/* Hamburger Button (Hidden on Desktop) */
+.mobile-menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #0c2e81;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1100;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-menu-overlay.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Mobile Menu Sidebar */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100%;
+  background-color: #fcf3e9;
+  z-index: 1200;
+  transition: right 0.3s ease;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
+}
+
+.mobile-menu.active {
+  right: 0;
+}
+
+.mobile-menu-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 2px solid #6cc0b8;
+}
+
+.mobile-menu-logo {
+  height: 35px;
+}
+
+.mobile-menu-close {
+  background: none;
+  border: none;
+  font-size: 35px;
+  color: #0c2e81;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+  width: 35px;
+  height: 35px;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-nav-links li {
+  border-bottom: 1px solid rgba(12, 46, 129, 0.1);
+}
+
+.mobile-nav-links .nav-link {
+  display: block;
+  padding: 18px 20px;
+  color: #0c2e81;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.mobile-nav-links .nav-link:hover,
+.mobile-nav-links .nav-link.active {
+  background-color: rgba(236, 128, 45, 0.1);
+  color: #ec802d;
+  padding-left: 30px;
+}
+
+/* ================= RESPONSIVE NAVIGATION ================= */
+@media (max-width: 992px) {
+
+  /* Hide desktop navigation */
+  .desktop-nav {
+    display: none !important;
+  }
+
+  /* Show hamburger menu */
+  .mobile-menu-toggle {
+    display: flex;
+    order: 3;
+    margin-left: auto;
+    margin-right: 10px;
+  }
+
+  /* Adjust nav container for mobile */
+  .nav-container {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Logo order */
+  .navbar-brand {
+    order: 1;
+  }
+
+  /* Icons order */
+  .nav-icons {
+    order: 4;
+    gap: 15px !important;
+  }
+
+  /* Hide some icons on smaller screens */
+  .lang-pill,
+  .icon-circle:not(#cart-icon) {
+    display: none;
+  }
+}
+
+@media (min-width: 993px) {
+
+  /* Ensure mobile menu is hidden on desktop */
+  .mobile-menu,
+  .mobile-menu-overlay {
+    display: none !important;
+  }
+}
+
+
+.banner-section {
+  width: 100%;
+}
+
+/* Wrapper is relative parent */
+.banner-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Image */
+.banner-img {
+  width: 100%;
+  display: block;
+}
+
+/* Absolute text overlay */
+.banner-content {
+  position: absolute;
+  top: 25%;
+  left: 5%;
+  color: #0c2e81;
+}
+
+.banner-content h1 {
+  font-size: 80px;
+  font-weight: bold;
+}
+
+.banner-content p {
+  font-size: 28px;
+  margin-top: 20px;
+}
+
+.order-btn {
+  display: inline-block;
+  margin-top: 25px;
+  background-color: #0c2e81;
+  color: #ec802d;
+  padding: 15px 35px;
+  font-size: 28px;
+  font-weight: bold;
+  border-radius: 40px;
+  text-decoration: none;
+}
+
+/* ================= COFFEE SECTION ================= */
+.coffee-section {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #fcf3e9;
+}
+
+/* Main Card Container */
+.coffee-container {
+  max-width: 1440px;
+  margin: auto;
+  height: 800px;
+  position: relative;
+  border-radius: 40px;
+  overflow: hidden;
+  /* box-shadow: 0px 10px 0 0 rgba(0,0,0,0.15); */
+}
+
+/* Left Image Fill */
+.coffee-left {
+  width: 100%;
+  height: 100%;
+}
+
+.coffee-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right Image Absolute Overlay */
+.coffee-right-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35%;
+  height: 98%;
+}
+
+.coffee-right-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text Absolute Overlay */
+.coffee-text {
+  position: absolute;
+  top: 30%;
+  right: 8%;
+  color: #0c2e81;
+  z-index: 2;
+}
+
+.coffee-text h2 {
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.coffee-text p {
+  font-size: 26px;
+  margin-top: 15px;
+  line-height: 1.4;
+}
+
+/* ================= MARKETPLACE SECTION ================= */
+.marketplace-section {
+  width: 100%;
+  background-color: #fcf3e9;
+}
+
+/* Top Green Strip */
+.marketplace-top {
+  background-color: #66bbb4;
+  padding: 50px 0;
+  border: 4px solid #0c2e81;
+}
+
+.marketplace-top-content {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 0 20px;
+}
+
+.cup-icon-1 {
+  width: 150px;
+}
+
+/* Heading */
+.marketplace-top-content h2 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #f5c84c;
+  line-height: 1.1;
+}
+
+.marketplace-top-content p {
+  font-size: 18px;
+  color: #0c2e81;
+  margin-top: 10px;
+}
+
+/* Cards Wrapper */
+.marketplace-cards {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  height: 100%;
+  padding: 70px 20px;
+}
+
+/* Card Style */
+.market-card {
+  background-color: #66bbb4;
+  border-radius: 35px;
+  padding: 20px 35px;
+  position: relative;
+  width: 100%;
+}
+
+/* Icon Circle */
+.card-icon {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-icon img {
+  width: 125px;
+}
+
+.card-text-custom {
+  margin-left: 15px;
+  margin-top: 10px;
+}
+
+/* Card Text */
+.card-text h3 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #0c2e81;
+  width: 100%;
+}
+
+.card-text p {
+  font-size: 17px;
+  margin-top: 10px;
+  color: #0c2e81;
+  line-height: 1.4;
+  width: 100%;
+}
+
+/* Bottom Button Bar */
+.card-btn {
+  /* margin-top: 25px; */
+  background-color: #e8b84a;
+  border-radius: 25px;
+  text-align: center;
+  padding: 10px;
+}
+
+.card-btn a {
+  font-weight: bold;
+  color: #0c2e81;
+  text-decoration: none;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE FIX
+   Desktop remains unchanged
+================================= */
+
+@media (max-width: 768px) {
+
+  /* Banner Section */
+  .banner-content {
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: left;
+    width: 85%;
+    max-width: 500px;
+    padding: 0 20px;
+  }
+
+  .banner-content h1 {
+    font-size: 32px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .coffee-right-img {
+    height: auto;
+  }
+
+  .coffee-text {
+    top: 45%;
+    right: 0;
+    left: 23px;
+  }
+
+  .coffee-container {
+    height: 480px;
+  }
+
+  .coffee-text h2 {
+    font-size: 28px;
+  }
+
+  .banner-content p {
+    font-size: 15px;
+    margin-top: 10px;
+    line-height: 1.5;
+    word-wrap: break-word;
+  }
+
+  .order-btn {
+    font-size: 15px;
+    padding: 10px 25px;
+    margin-top: 0px;
+  }
+
+  /* Coffee Section */
+  .coffee-section {
+    padding: 40px 20px;
+  }
+
+  .coffee-left {
+    text-align: center;
+    padding: 0 15px;
+  }
+
+  .coffee-left h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+
+  .coffee-left p {
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 100%;
+  }
+
+  .coffee-right-img {
+    margin-top: 0px;
+  }
+
+  /* Marketplace Section */
+  .marketplace-top {
+    padding: 30px 20px;
+  }
+
+  .marketplace-top-content {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .cup-icon-1 {
+    width: 100px;
+  }
+
+  .marketplace-top-content h2 {
+    font-size: 30px;
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .marketplace-top-content p {
+    font-size: 16px;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* Marketplace Cards */
+  .marketplace-cards {
+    flex-direction: column;
+    padding: 30px 20px;
+  }
+
+  .marketplace-card {
+    padding: 30px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .card-icon {
+    margin: 0 auto;
+  }
+
+  .card-icon img {
+    width: 100px;
+  }
+
+  .card-text {
+    text-align: center;
+  }
+
+  .card-text h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .card-text p {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .card-btn {
+    margin-top: 15px;
+  }
+
+  .coffee-left img {
+    object-fit: contain;
+    height: auto;
+
+  }
+}
+
+/* EXTRA SMALL PHONES */
+@media (max-width: 480px) {
+
+  /* Banner */
+  .banner-content {
+    top: 8%;
+    width: 90%;
+    max-width: 350px;
+    padding: 0 15px;
+  }
+
+  .banner-content h1 {
+    font-size: 20px;
+    line-height: 1.3;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .banner-content p {
+    font-size: 11px;
+    line-height: 1.5;
+    word-wrap: break-word;
+  }
+
+  .order-btn {
+    font-size: 13px;
+    padding: 8px 20px;
+  }
+
+  /* Coffee Section */
+  .coffee-section {
+    padding: 30px 15px;
+  }
+
+  .coffee-left h2 {
+    font-size: 26px;
+  }
+
+  .coffee-left p {
+    font-size: 14px;
+  }
+
+  /* Marketplace */
+  .marketplace-top {
+    padding: 25px 15px;
+  }
+
+  .marketplace-top-content h2 {
+    font-size: 26px;
+  }
+
+  .marketplace-top-content p {
+    font-size: 14px;
+  }
+
+  .cup-icon-1 {
+    width: 80px;
+  }
+
+  /* Cards */
+  .marketplace-cards {
+    padding: 25px 15px;
+  }
+
+  .marketplace-card {
+    padding: 25px 15px;
+  }
+
+  .card-icon img {
+    width: 90px;
+  }
+
+  .card-text h3 {
+    font-size: 20px;
+  }
+
+  .card-text p {
+    font-size: 14px;
+  }
+}

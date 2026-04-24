@@ -1,0 +1,69 @@
+/* ===============================
+   PRIVACY POLICY
+================================= */
+
+.privacy-policy-section {
+  background-color: #fcf3e9;
+}
+
+.privacy-title {
+  color: #FDB115;
+  font-size: 36px;
+  font-weight: 800;
+}
+
+.policy-block {
+  margin-bottom: 28px;
+}
+
+.policy-block h5 {
+  color: #FDB115;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.privacy-text {
+  color: #0c2e81;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.privacy-list {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+.privacy-list li {
+  color: #0c2e81;
+  font-size: 15px;
+  margin-bottom: 6px;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+================================= */
+
+@media (max-width: 768px) {
+  .privacy-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .privacy-text {
+    font-size: 15px;
+  }
+
+  .policy-block h5 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-title {
+    font-size: 24px;
+  }
+
+  .privacy-text {
+    font-size: 14px;
+  }
+}

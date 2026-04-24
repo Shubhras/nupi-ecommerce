@@ -1,0 +1,281 @@
+/* ===============================
+   CHECKOUT PAGE STYLE
+================================= */
+
+.checkout-wrapper {
+  background: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2000;
+  display: none;
+  /* Hidden by default */
+  justify-content: flex-end;
+  /* Align to right */
+  align-items: flex-start;
+  /* Start from top */
+  /* align-items: center;  Removed to safe-guard top clipping on overflow */
+  overflow-y: auto;
+  padding: 0 0 20px 0;
+}
+
+.checkout-container {
+  background: #fcf3e9;
+  width: 90%;
+  max-width: 1100px;
+  width: 90%;
+  max-width: 1100px;
+  margin: 80px 5% 0 0;
+  /* Align right with margin from top/right */
+  /* center vertically removed to align top right */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  /* Match cart shadow */
+  border-radius: 40px;
+  padding: 40px;
+
+  display: flex;
+  gap: 50px;
+}
+
+/* LEFT SIDE */
+.checkout-left {
+  flex: 1;
+}
+
+.checkout-title {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0c2e81;
+}
+
+.section-heading {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 20px;
+  color: #0c2e81;
+}
+
+/* Inputs */
+.custom-input {
+  border-radius: 20px;
+  margin-top: 12px;
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.custom-input-sm {
+  border-radius: 15px;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.secure-text {
+  font-size: 12px;
+  margin-top: 10px;
+  color: #0c2e81;
+}
+
+/* Payment Box */
+.payment-box {
+  border: 1px solid #ccc;
+  border-radius: 18px;
+  padding: 20px;
+  margin-top: 15px;
+  width: 80%;
+}
+
+/* RIGHT SIDE */
+.checkout-right {
+  flex: 1;
+  position: relative;
+}
+
+/* Steps */
+.checkout-steps {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  margin-right: 40px;
+}
+
+.step {
+  font-size: 13px;
+  color: gray;
+}
+
+.step.active {
+  font-weight: 700;
+  color: #0c2e81;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background: lightgray;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: #0c2e81;
+}
+
+/* Order Card */
+.order-card {
+  border: 1px solid #aaa;
+  border-radius: 25px;
+  padding: 25px;
+  background: white;
+}
+
+.order-title {
+  font-weight: 800;
+  color: #0c2e81;
+  margin-bottom: 20px;
+}
+
+/* Product */
+.order-img {
+  width: 70px;
+  height: 70px;
+  background: #f8e3b6;
+  border-radius: 15px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.order-img img {
+  width: 45px;
+}
+
+/* Price Lines */
+.order-line {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin: 8px 0;
+  color: #0c2e81;
+}
+
+.order-line.total {
+  font-weight: 800;
+  font-size: 17px;
+}
+
+/* Button */
+.place-order-btn {
+  background: #ffb400;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 12px;
+  font-weight: 700;
+  color: #0c2e81;
+  display: block;
+  margin: auto;
+}
+
+/* Illustration */
+.checkout-illustration {
+  position: absolute;
+  bottom: -30px;
+  right: -20px;
+  width: 160px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .checkout-container {
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .payment-box {
+    width: 100%;
+  }
+
+  .checkout-right {
+    text-align: center;
+  }
+
+  .checkout-illustration {
+    display: none;
+  }
+}
+
+/* Mobile Font Size Adjustments */
+@media (max-width: 768px) {
+  .checkout-title {
+    font-size: 28px;
+  }
+
+  .section-heading {
+    font-size: 16px;
+  }
+
+  .order-title {
+    font-size: 18px;
+  }
+
+  .order-line {
+    font-size: 13px;
+  }
+
+  .order-line.total {
+    font-size: 15px;
+  }
+
+  .custom-input {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .place-order-btn {
+    font-size: 14px;
+    padding: 8px 25px;
+  }
+
+  .checkout-illustration {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-title {
+    font-size: 24px;
+  }
+
+  .section-heading {
+    font-size: 14px;
+  }
+
+  .order-title {
+    font-size: 16px;
+  }
+
+  .order-line {
+    font-size: 12px;
+  }
+
+  .order-line.total {
+    font-size: 14px;
+  }
+
+  .order-card {
+    padding: 15px;
+  }
+
+  .order-img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .order-img img {
+    width: 40px;
+  }
+}

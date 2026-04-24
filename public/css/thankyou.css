@@ -1,0 +1,306 @@
+/* ===============================
+   THANK YOU PAGE STYLE
+================================= */
+
+.thankyou-wrapper {
+  background: rgba(0, 0, 0, 0.6);
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Ensure full height for scrolling */
+  z-index: 9999;
+
+  /* Align to right side */
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0 0 20px 0;
+  overflow-y: auto;
+  /* Allow scrolling if content is tall */
+}
+
+.thankyou-container {
+  background: #fcf3e9;
+  width: 90%;
+  max-width: 850px;
+
+  /* Match Checkout positioning logic */
+  margin: 80px 5% 0 0;
+  /* Top margin + Right margin */
+
+  padding: 40px;
+  border-radius: 40px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Steps */
+/* Close button and steps container */
+.thankyou-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  position: absolute;
+  top: 25px;
+  right: 40px;
+  width: 100%;
+}
+
+.thankyou-steps {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  /* steps styles */
+}
+
+.step {
+  color: gray;
+}
+
+.step.active {
+  font-weight: 700;
+  color: #0c2e81;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  background: lightgray;
+  border-radius: 50%;
+}
+
+.dot.active {
+  background: #0c2e81;
+}
+
+/* Cup Icon */
+.cup-icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* Title */
+.thankyou-title {
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: 800;
+  color: #0c2e81;
+}
+
+.thankyou-text {
+  font-size: 14px;
+  color: #0c2e81;
+}
+
+/* Button */
+.continue-btn {
+  background: #0c2e81;
+  color: white;
+  padding: 10px 28px;
+  border-radius: 20px;
+  border: none;
+  font-weight: 600;
+  margin: 15px 0 25px;
+}
+
+/* Order Box */
+.order-box {
+  background: white;
+  border-radius: 25px;
+  padding: 25px;
+  text-align: left;
+}
+
+.order-header h6 {
+  font-weight: 800;
+  color: #0c2e81;
+}
+
+.order-header p {
+  font-size: 13px;
+  color: gray;
+}
+
+/* Small Details */
+.small-details p {
+  font-size: 12px;
+  color: #0c2e81;
+}
+
+/* Item Ordered */
+.items-title {
+  font-weight: 700;
+  color: #0c2e81;
+  margin-bottom: 15px;
+}
+
+.item-img {
+  width: 55px;
+  height: 55px;
+  background: #f8e3b6;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-img img {
+  width: 35px;
+}
+
+/* Mini Products */
+.mini-product {
+  width: 90px;
+}
+
+.mini-product img {
+  width: 35px;
+}
+
+.mini-product p {
+  font-size: 11px;
+  margin: 5px 0;
+  color: #0c2e81;
+}
+
+.mini-product button {
+  font-size: 10px;
+  border: none;
+  padding: 4px 10px;
+  background: #0c2e81;
+  color: white;
+  border-radius: 12px;
+}
+
+/* Summary */
+.summary-box {
+  font-size: 13px;
+  color: #0c2e81;
+  margin-top: 20px;
+}
+
+.summary-box span {
+  float: right;
+}
+
+.summary-box .total {
+  font-weight: 800;
+  margin-top: 10px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .thankyou-container {
+    padding: 20px;
+    padding-top: 60px;
+    border-radius: 10px;
+  }
+
+  .thankyou-header {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .thankyou-steps {
+    position: static;
+    font-size: 10px;
+    gap: 6px;
+    flex: 1;
+  }
+
+  .step {
+    font-size: 10px;
+  }
+
+  .dot {
+    width: 5px;
+    height: 5px;
+  }
+
+  .btn-close {
+    position: static;
+    margin: 0;
+    flex-shrink: 0;
+  }
+
+  .cup-icon {
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+  }
+
+  .thankyou-title {
+    font-size: 22px;
+    margin-top: 15px;
+  }
+
+  .thankyou-text {
+    font-size: 13px;
+  }
+
+  .order-box {
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .summary-box span {
+    float: none;
+    display: block;
+  }
+}
+
+@media (max-width: 480px) {
+  .thankyou-container {
+    padding: 15px;
+    padding-top: 55px;
+  }
+
+  .thankyou-header {
+    top: 12px;
+    padding: 0 12px;
+  }
+
+  .thankyou-steps {
+    font-size: 9px;
+    gap: 4px;
+  }
+
+  .step {
+    font-size: 9px;
+  }
+
+  .cup-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .thankyou-title {
+    font-size: 20px;
+  }
+
+  .thankyou-text {
+    font-size: 12px;
+  }
+
+  .continue-btn {
+    font-size: 14px;
+    padding: 8px 20px;
+  }
+
+  .order-box {
+    padding: 15px 10px;
+  }
+}
